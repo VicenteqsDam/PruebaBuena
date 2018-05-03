@@ -23,15 +23,7 @@ public class Ejecutable {
 			ciudad = scan.nextLine();
 			System.out.println("Introduce la edad");
 			edad = Integer.valueOf(scan.nextLine());
-			Persona p = null;
-			if (opcion == 1) {
-				p = new Hombre();
-			} else if (opcion == 2) {
-				p = new Mujer();
-			}
-			p.setCiudad(ciudad);
-			p.setEdad(edad);
-			p.setNombre(nombre);
+			Persona p = PersonaFactory.crearPersona(opcion, nombre, ciudad, edad);
 			listado.add(p);
 		} while (opcion != 3);
 		scan.close();

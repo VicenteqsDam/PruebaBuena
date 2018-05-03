@@ -1,10 +1,30 @@
 package ejerciciosProgramacion.pruebaConInterfaz;
 
-public interface Persona {
-	public String getNombre();
-	public void setNombre(String nombre);
-	public int getEdad();
-	public void setEdad(int edad);
-	public String getCiudad();
-	public void setCiudad(String ciudad);
+public class Persona {
+	private String nombre;
+	private String ciudad;
+	private int edad; 
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public int getEdad() {
+		return edad;
+	}
+
+	public void setEdad(int edad) {
+		this.edad = edad;
+	}
+
+	public String getCiudad() {
+		return ciudad;
+	}
+
+	public void setCiudad(String ciudad) {
+		this.ciudad = ciudad;
+	}
 }

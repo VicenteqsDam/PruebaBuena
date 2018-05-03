@@ -1,22 +1,20 @@
 package formabuenasincronizar;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
 
 public class App {
 
 	public static void main(String[] args) throws IOException, InterruptedException {
-		Persona p1 = new Persona("frase chula");
-		Persona p2 = new Persona("frase mas chula");
-		Persona p3 = new Persona("frase aun mas chula");
-		p1.decirFrase();
-		p1.decirFrase();
-		p2.decirFrase();
-		p3.decirFrase();
-		p2.decirFrase();
-		p3.decirFrase();
-		p1.cerrarLog();
-		p2.cerrarLog();
-		p3.cerrarLog();
+		String linea = null;
+		File archivo = new File("C:\\archivo.txt");
+		try (FileReader fr = new FileReader(archivo); BufferedReader br = new BufferedReader(fr)) {
+			while ((linea = br.readLine()) != null) {
+				System.out.println(linea);
+			}
+		}
 	}
 
 }
